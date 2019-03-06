@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyStatelessWidget(),
+
     );
+
   }
 }
 
@@ -24,6 +26,63 @@ class MyStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body:
+        Column(
+          children: <Widget>[
+            Expanded(
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: SizedBox.expand(
+                        child:
+                        Ink(
+                          decoration: BoxDecoration(
+                            color: Colors.blueGrey,
+                          ),
+                          child: IconButton(
+                            icon: Icon(Icons.arrow_left),
+                            onPressed: (){},
+                          ),
+                        ),
+                      ),
+                      flex: 5,
+                    ),
+                    Expanded(
+                      child: SizedBox.expand(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black)
+                          ),
+                          child: Center(child: Text("3/7/19", style: TextStyle(fontSize: 30),),)
+                        ),
+                      ),
+                      flex: 20,
+                    ),
+                    Expanded(
+                      child: SizedBox.expand(
+                        child:
+                        Ink(
+                          decoration: BoxDecoration(
+                            color: Colors.blueGrey,
+                          ),
+                          child: IconButton(
+                            icon: Icon(Icons.arrow_right),
+                            onPressed: (){},
+                          ),
+                        ),
+                      ),
+                      flex: 5,
+                    ),
+                  ],
+                ),
+              flex: 2,
+            ),
+            Expanded(
+              child: SizedBox.expand(child: null,),
+              flex: 15,
+            ),
+          ],
+        ),
       appBar: AppBar(
         title: Text('Hello World'),
         actions: <Widget>[
