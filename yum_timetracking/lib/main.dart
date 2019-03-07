@@ -86,12 +86,12 @@ class MyStatelessWidget extends StatelessWidget {
                     title: Text("Projects"),
                     children: <Widget>[
                       CheckboxListTile(
-                        value: false,
+                        value: true,
                         title: Text('Hardware Support'),
                         onChanged: (bool value){},
                       ),
                       CheckboxListTile(
-                        value: false,
+                        value: true,
                         title: Text('Software Support'),
                         onChanged: (bool value){},
                       ),
@@ -103,36 +103,139 @@ class MyStatelessWidget extends StatelessWidget {
                     ],
                   ),
                   Column(
-                    children: 
+                    children:
                     <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Expanded(child: Center(child: Text("Software Support")), flex: 6,),
-                          Expanded(child: TextField())
-                        ],
+                      Ink(
+                        color: Colors.blueGrey,
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Center(
+                                child: Text("Software Support",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),),
+                              ),
+                              flex: 6,
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    height: 5.0,
+                                    child: null,
+                                  ),
+                                  Ink(
+                                    color: Colors.white,
+                                    child: TextField(decoration: InputDecoration(hintText: '0'),),
+                                  ),
+                                ],
+                                /*child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white
+                                  ),
+                                  child: TextField(),
+                                ),*/
+                              ),
+                              flex: 1,
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('0'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('1'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('2'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('3'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('4'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('5'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('6'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('7'),)),
-                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('8'),)),
+                      Ink(
+                        color: Colors.blueGrey,
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('0'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('1'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('2'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('3'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('4'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('5'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('6'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('7'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('8'),)),
 
-                        ],
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    height: 20.0,
+                    decoration: BoxDecoration(color: Colors.white),
+                  ),
+                  Column(
+                    children:
+                    <Widget>[
+                      Ink(
+                        color: Colors.blueGrey,
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Center(
+                                child: Text("Hardware Support",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),),
+                              ),
+                              flex: 6,
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    height: 5.0,
+                                    child: null,
+                                  ),
+                                  Ink(color: Colors.white, child: TextField(decoration: InputDecoration(hintText: '0'),),),
+                                ],
+                                /*child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white
+                                  ),
+                                  child: TextField(),
+                                ),*/
+                              ),
+                              flex: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Ink(
+                        color: Colors.blueGrey,
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('0'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('1'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('2'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('3'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('4'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('5'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('6'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('7'),)),
+                            Expanded(child: RaisedButton(onPressed: (){}, child: Text('8'),)),
+
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
-              flex: 15,
+              flex: 14,
+            ),
+            Expanded(
+              child: SizedBox.expand(
+                child: RaisedButton(
+                  color: Colors.grey.shade600,
+                  child: Text("Sumbit",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),),
+                  onPressed: (){},
+                ),
+              ),
+              flex: 2,
             ),
           ],
         ),
+
       appBar: AppBar(
         title: Text('YUM! Timekeeping'),
         actions: <Widget>[
