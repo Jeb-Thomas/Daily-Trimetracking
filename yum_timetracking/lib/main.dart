@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +41,7 @@ class MyStatelessWidget extends StatelessWidget {
                           ),
                           child: IconButton(
                             icon: Icon(Icons.arrow_left),
+                            color: Colors.white,
                             onPressed: (){},
                           ),
                         ),
@@ -67,6 +68,7 @@ class MyStatelessWidget extends StatelessWidget {
                           ),
                           child: IconButton(
                             icon: Icon(Icons.arrow_right),
+                            color: Colors.white,
                             onPressed: (){},
                           ),
                         ),
@@ -78,23 +80,72 @@ class MyStatelessWidget extends StatelessWidget {
               flex: 2,
             ),
             Expanded(
-              child: SizedBox.expand(child: null,),
+              child: ListView(
+                children: <Widget>[
+                  ExpansionTile(
+                    title: Text("Projects"),
+                    children: <Widget>[
+                      CheckboxListTile(
+                        value: false,
+                        title: Text('Hardware Support'),
+                        onChanged: (bool value){},
+                      ),
+                      CheckboxListTile(
+                        value: false,
+                        title: Text('Software Support'),
+                        onChanged: (bool value){},
+                      ),
+                      CheckboxListTile(
+                        value: false,
+                        title: Text('Vacation'),
+                        onChanged: (bool value){},
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: 
+                    <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Expanded(child: Center(child: Text("Software Support")), flex: 6,),
+                          Expanded(child: TextField())
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('0'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('1'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('2'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('3'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('4'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('5'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('6'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('7'),)),
+                          Expanded(child: RaisedButton(onPressed: (){}, child: Text('8'),)),
+
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
               flex: 15,
             ),
           ],
         ),
       appBar: AppBar(
-        title: Text('Hello World'),
+        title: Text('YUM! Timekeeping'),
         actions: <Widget>[
-          IconButton(
+          /*IconButton(
             icon: Icon(Icons.shopping_cart),
             tooltip: 'Open shopping cart',
             onPressed: () {
               // ...
             },
-          ),
+          ),*/
         ],
       ),
+      drawer: Drawer(),
     );
   }
 }
