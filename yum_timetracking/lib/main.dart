@@ -19,8 +19,7 @@ class MyApp extends StatelessWidget {
 
   }
 }
-
-
+var hours = [0,0,0];
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
   @override
@@ -110,9 +109,9 @@ class MyStatelessWidget extends StatelessWidget {
                     Container(
                       height: 20.0,
                     ),
-                    MyHours(nameOfTask: "Software Support",),
-                    MyHours(nameOfTask: "Hardware Support"),
-                    MyHours(nameOfTask: "Vacation"),
+                    MyHours(nameOfTask: "Software Support", numHours: hours[0],),
+                    MyHours(nameOfTask: "Hardware Support", numHours: hours[1],),
+                    //MyHours(nameOfTask: "Vacation", numHours: hours[2],),
                   ],
                 ),
               ),
@@ -122,7 +121,7 @@ class MyStatelessWidget extends StatelessWidget {
               child: SizedBox.expand(
                 child: RaisedButton(
                   color: Colors.grey.shade600,
-                  child: Text("Sumbit",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),),
+                  child: Text("Sumbit ${totalNumberOfHours().toString()} hours",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),),
                   onPressed: (){},
                 ),
               ),
@@ -146,4 +145,11 @@ class MyStatelessWidget extends StatelessWidget {
       drawer: Drawer(),
     );
   }
+}
+int totalNumberOfHours(){
+  int total=0;
+  for(int i=0;i<hours.length;i++){
+    total+=hours[i];
+  }
+  return total;
 }

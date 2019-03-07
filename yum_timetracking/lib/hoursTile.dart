@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import './main.dart';
 class MyHours extends StatefulWidget{
   final String nameOfTask;
+  final int numHours;
   @override
   State<StatefulWidget> createState(){
-    return MyHoursTile(nameOfTask: nameOfTask);
+    return MyHoursTile(nameOfTask: nameOfTask, numHours: numHours);
   }
 
-  MyHours({Key key, @required this.nameOfTask}) : super (key:key);
+  MyHours({Key key, @required this.nameOfTask, @required this.numHours}) : super (key:key);
   //SecondScreenWithData({Key key, @required this.person}) : super(key: key);
 }
 
 class MyHoursTile extends State<MyHours>{
   int numHours;
   final String nameOfTask;
-  MyHoursTile({Key key, @required this.nameOfTask});
+  MyHoursTile({Key key, @required this.nameOfTask, @required this.numHours});
   @override
   Widget build(BuildContext context){
     return Column(
@@ -70,7 +72,7 @@ class MyHoursTile extends State<MyHours>{
               Expanded(child: RaisedButton(onPressed: (){numHours = 5;setState(() {});}, child: Text('5'),)),
               Expanded(child: RaisedButton(onPressed: (){numHours = 6;setState(() {});}, child: Text('6'),)),
               Expanded(child: RaisedButton(onPressed: (){numHours = 7;setState(() {});}, child: Text('7'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 8;setState(() {});}, child: Text('8'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 8;setState(() {hours[0]=8;});}, child: Text('8'),)),
 
             ],
           ),
