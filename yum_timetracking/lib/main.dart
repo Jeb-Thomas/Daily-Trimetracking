@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import './hoursTile.dart';
+import 'submitButton.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -109,15 +110,16 @@ class MyStatelessWidget extends StatelessWidget {
                     Container(
                       height: 20.0,
                     ),
-                    MyHours(nameOfTask: "Software Support", numHours: hours[0],),
-                    MyHours(nameOfTask: "Hardware Support", numHours: hours[1],),
+                    MyHours(nameOfTask: "Hardware Support", numHours: hours[0],),
+                    MyHours(nameOfTask: "Software Support", numHours: hours[1],),
+
                     //MyHours(nameOfTask: "Vacation", numHours: hours[2],),
                   ],
                 ),
               ),
               flex: 14,
             ),
-            Expanded(
+            /*Expanded(
               child: SizedBox.expand(
                 child: RaisedButton(
                   color: Colors.grey.shade600,
@@ -126,7 +128,8 @@ class MyStatelessWidget extends StatelessWidget {
                 ),
               ),
               flex: 2,
-            ),
+            ),*/
+            MySubmitButton(),
           ],
         ),
 

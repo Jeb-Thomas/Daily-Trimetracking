@@ -36,7 +36,7 @@ class MyHoursTile extends State<MyHours>{
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: 5.0,
+                      height: 8.0,
                       child: null,
                     ),
                     Ink(
@@ -52,6 +52,10 @@ class MyHoursTile extends State<MyHours>{
                         ),
                       ),
                     ),
+                    Container(
+                      height: 8.0,
+                      child: null,
+                    ),
                   ],
                 ),
                 flex: 1,
@@ -64,14 +68,14 @@ class MyHoursTile extends State<MyHours>{
           padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: <Widget>[
-              Expanded(child: RaisedButton(onPressed: (){numHours = 0;setState(() {});}, child: Text('0'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 1;setState(() {});}, child: Text('1'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 2;setState(() {});}, child: Text('2'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 3;setState(() {});}, child: Text('3'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 4;setState(() {});}, child: Text('4'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 5;setState(() {});}, child: Text('5'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 6;setState(() {});}, child: Text('6'),)),
-              Expanded(child: RaisedButton(onPressed: (){numHours = 7;setState(() {});}, child: Text('7'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 0;setState(() {hours[0]=0;});}, child: Text('0'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 1;setState(() {hours[0]=1;});}, child: Text('1'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 2;setState(() {hours[0]=2;});}, child: Text('2'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 3;setState(() {hours[0]=3;});}, child: Text('3'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 4;setState(() {hours[0]=4;});}, child: Text('4'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 5;setState(() {hours[0]=5;});}, child: Text('5'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 6;setState(() {hours[0]=6;});}, child: Text('6'),)),
+              Expanded(child: RaisedButton(onPressed: (){numHours = 7;setState(() {hours[0]=7;});}, child: Text('7'),)),
               Expanded(child: RaisedButton(onPressed: (){numHours = 8;setState(() {hours[0]=8;});}, child: Text('8'),)),
 
             ],
