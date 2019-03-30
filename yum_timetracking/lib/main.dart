@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 var hours = [0,0,0];
+//*************needs to be modified to be a stateful widget*****************
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
   @override
@@ -30,8 +31,10 @@ class MyStatelessWidget extends StatelessWidget {
         Column(
           children: <Widget>[
             Expanded(
+              //top bar of the home screen with date and right left arrows
                 child: Row(
                   children: <Widget>[
+                    //mockup for going to previous date
                     Expanded(
                       child: SizedBox.expand(
                         child:
@@ -48,6 +51,7 @@ class MyStatelessWidget extends StatelessWidget {
                       ),
                       flex: 5,
                     ),
+                    //mockup for the date display
                     Expanded(
                       child: SizedBox.expand(
                         child: Container(
@@ -59,6 +63,7 @@ class MyStatelessWidget extends StatelessWidget {
                       ),
                       flex: 20,
                     ),
+                    //mockup for going to next date
                     Expanded(
                       child: SizedBox.expand(
                         child:
@@ -82,6 +87,8 @@ class MyStatelessWidget extends StatelessWidget {
             Expanded(
               child: Ink(
                 color: Colors.black87,
+                //mockup for list of projects the user has been assigned to
+                //Needs checkbox functionality implemented
                 child: ListView(
                   children: <Widget>[
                     Ink(
@@ -110,6 +117,8 @@ class MyStatelessWidget extends StatelessWidget {
                     Container(
                       height: 20.0,
                     ),
+                    //how to create a task object
+                    //these should be created based on the status of the checkboxes
                     MyHours(nameOfTask: "Hardware Support", numHours: hours[0],),
                     MyHours(nameOfTask: "Software Support", numHours: hours[1],),
 
@@ -129,6 +138,8 @@ class MyStatelessWidget extends StatelessWidget {
               ),
               flex: 2,
             ),*/
+            //should send the data from the array of hours, clear the array, and switch to the next day
+            //currently just updates the display of the number of hours selected
             MySubmitButton(),
           ],
         ),

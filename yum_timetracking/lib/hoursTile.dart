@@ -7,7 +7,7 @@ class MyHours extends StatefulWidget{
   State<StatefulWidget> createState(){
     return MyHoursTile(nameOfTask: nameOfTask, numHours: numHours);
   }
-
+  //must pass in the name of the task and the array to store the hours in
   MyHours({Key key, @required this.nameOfTask, @required this.numHours}) : super (key:key);
   //SecondScreenWithData({Key key, @required this.person}) : super(key: key);
 }
@@ -26,6 +26,7 @@ class MyHoursTile extends State<MyHours>{
           padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: <Widget>[
+              //display the name of the task
               Expanded(
                 child: Center(
                   child: Text(nameOfTask,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),),
@@ -35,10 +36,12 @@ class MyHoursTile extends State<MyHours>{
               Expanded(
                 child: Column(
                   children: <Widget>[
+                    //functioning as padding
                     Container(
                       height: 8.0,
                       child: null,
                     ),
+                    //display the number of hours to be submitted for the task
                     Ink(
                       color: Colors.white,
                       child:
@@ -52,6 +55,7 @@ class MyHoursTile extends State<MyHours>{
                         ),
                       ),
                     ),
+                    //functioning as padding
                     Container(
                       height: 8.0,
                       child: null,
@@ -66,6 +70,8 @@ class MyHoursTile extends State<MyHours>{
         Ink(
           color: Colors.blueGrey,
           padding: EdgeInsets.symmetric(horizontal: 10.0),
+          //one button for each of the possible selections of hours
+          //this should probably be done via a constructor
           child: Row(
             children: <Widget>[
               Expanded(child: RaisedButton(onPressed: (){numHours = 0;setState(() {hours[0]=0;});}, child: Text('0'),)),
