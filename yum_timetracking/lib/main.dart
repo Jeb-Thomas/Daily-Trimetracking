@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
 
   }
 }
+//array to hold the hours to submit
 var hours = [0,0,0];
 //*************needs to be modified to be a stateful widget*****************
 class MyStatelessWidget extends StatelessWidget {
@@ -119,8 +120,8 @@ class MyStatelessWidget extends StatelessWidget {
                     ),
                     //how to create a task object
                     //these should be created based on the status of the checkboxes
-                    MyHours(nameOfTask: "Hardware Support", numHours: hours[0],),
-                    MyHours(nameOfTask: "Software Support", numHours: hours[1],),
+                    MyHours(nameOfTask: "Hardware Support", taskIndex: 0,),
+                    MyHours(nameOfTask: "Software Support", taskIndex: 1,),
 
                     //MyHours(nameOfTask: "Vacation", numHours: hours[2],),
                   ],
